@@ -1,0 +1,35 @@
+'''
+ @author
+
+Description: Create an application which will continuously ask for grades 
+(0-100) for assignments.  Once the user inputs a 'q', the program should output 
+the average of all of the input grades.
+
+'''
+#Defines the Grades as a list and sets a hard limit
+grades = []
+limit = 10000
+#A while true loop to take user input and add it to the grades list.
+while True:
+   #if the grades inputed is more than the limit, break the loop
+    if len(grades)>limit:
+        break
+    #Takes input and makes it 
+    grade = input("Input grade (0-100) or q to quit:")
+    
+    if grade.lower()=="q":
+        break
+    try: 
+        grade = float(grade)
+        if grade<0 or grade>100:
+            raise Exception("Not a Valid number")
+        else:
+            grades.append(grade)
+        
+    except:
+        print("Thats not a number between 0-100")
+sum = 0
+if len(grades)>0:
+    for grade in grades:
+        sum+=grade
+    print(sum/len(grades))          
