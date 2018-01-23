@@ -1,0 +1,9 @@
+'''
+Created on Jan 23, 2018
+
+@author: student
+'''
+import random
+print("Hello, welcome to the Dice Roller. Please input the dice roll in 1d6 format,where 1 = number of dice and 6 = the number of faces") 
+rawData = input(":")
+data = rawData.split("d")
